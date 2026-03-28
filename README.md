@@ -1,4 +1,4 @@
 # What is Cloudless?
-Cloudless is a live air traffic app, planned to be available for both iOS and Android mobile devices.
+Cloudless is a live Flight Radar app, planned to be available for both iOS and Android mobile devices. Built with React Native, Cloudless was designed from the ground up to present live air traffic data cleanly. 
 
-Build with React Native, Cloudless was designed from the ground up to present live air traffic data cleanly. 
+This is mostly a side project to allow me to learn Cross-Platform app development.
