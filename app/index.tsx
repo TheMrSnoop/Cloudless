@@ -1,5 +1,4 @@
-import { Text, View, StyleSheet} from "react-native";
-
+import { StyleSheet, Text, View } from "react-native";
 
 export default function Index() {
   return (
@@ -9,24 +8,22 @@ export default function Index() {
   );
 }
 
-const indexStyle = StyleSheet.create({ 
+const indexStyle = StyleSheet.create({
   container: {
     backgroundColor: "#101010",
     flex: 1,
     justifyContent: "center",
-    alignItems: "center"
+    alignItems: "center",
   },
-  text: 
-  {
-    color: '#ffffff',
+  text: {
+    color: "#ffffff",
     fontSize: 64,
     padding: 25,
-    fontFamily: "DMMono_400Regular"
+    fontFamily: "DMMono_400Regular",
   },
-  button:
-  {
+  button: {
     fontSize: 24,
     textDecorationLine: "underline",
-    color: "#ffffff"
-  }
-})
+    color: "#ffffff",
+  },
+});

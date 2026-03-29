@@ -1,11 +1,15 @@
-import { Stack } from "expo-router";
-import { StatusBar } from "expo-status-bar";
-import { TouchableOpacity, Text, StyleSheet, Pressable } from "react-native";
-import { useFonts, DMMono_300Light, DMMono_400Regular, DMMono_500Medium } from "@expo-google-fonts/dm-mono";
+import {
+  DMMono_300Light,
+  DMMono_400Regular,
+  DMMono_500Medium,
+  useFonts,
+} from "@expo-google-fonts/dm-mono";
+import { Ionicons, Feather } from "@expo/vector-icons";
+import { Stack, router } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
+import { StatusBar } from "expo-status-bar";
 import { useEffect } from "react";
-import { Ionicons } from "@expo/vector-icons";
-import { router } from "expo-router";
+import { Pressable, StyleSheet } from "react-native";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -13,7 +17,7 @@ export default function RootLayout() {
   const [loaded, error] = useFonts({
     DMMono_300Light,
     DMMono_400Regular,
-    DMMono_500Medium
+    DMMono_500Medium,
   });
 
   useEffect(() => {
@@ -25,40 +29,56 @@ export default function RootLayout() {
   return (
     <>
       <StatusBar style="auto" />
-      <Stack screenOptions={{
+      <Stack
+        screenOptions={{
           headerStyle: {
-              backgroundColor: "#101010"
+            backgroundColor: "#101010",
           },
           headerTintColor: "#fff",
           headerShadowVisible: false,
-      }}>
-
-
+        }}
+      >
         <Stack.Screen
           name="index"
           options={{
-            headerTitle: "Live View",
+            headerTitle: "San Antonio, TX",
             headerRight: () => (
-              <Pressable style={styles.button} onPress={() => router.push("/settings")}>
-              <Ionicons name="settings-outline" size={20} color="#ffffff" />
+              <Pressable
+                style={styles.button}
+                onPress={() => router.push("/settings")}
+              >
+                <Ionicons name="settings-outline" size={20} color="#ffffff" />
               </Pressable>
             ),
+            headerLeft: () => (
+              <Pressable
+                style={styles.button}
+                onPress={() => router.push("/settings")}
+              >
+                <Ionicons name="logo-apple-ar" size={20} color="#ffffff" />
+              </Pressable> 
+            )
           }}
         />
 
-        <Stack.Screen name="settings" options={{headerTitle: "Settings"}}/>
+        <Stack.Screen
+          name="settings"
+          options={{
+            headerTitle: "",
+            headerBackButtonDisplayMode: "minimal"
+          }}
+        />
       </Stack>
     </>
   );
 }
 
-
-const styles = StyleSheet.create({ 
+const styles = StyleSheet.create({
   button: {
     padding: 5,
     borderRadius: 10,
     display: "flex",
-    alignItems: 'center',
-    justifyContent: 'center'
-  }
-})
+    alignItems: "center",
+    justifyContent: "center",
+  },
+});
